@@ -8,11 +8,7 @@ import styles from "./index.module.css";
 function HomePage() {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
-  const [users, setUsers] = useState(
-    localStorage.getItem("users")
-      ? JSON.parse(localStorage.getItem("users"))
-      : []
-  );
+  const [users, setUsers] = useState([]);
 
   const initialRequest = localStorage.getItem("initialRequest")
     ? localStorage.getItem("initialRequest")
@@ -29,6 +25,14 @@ function HomePage() {
   const filterData = users.filter(function (item) {
     return item?.user?.name?.first?.toLowerCase().indexOf(search) !== -1; // returns true or false
   });
+
+  const userData = localStorage.getItem("users")
+    ? JSON.parse(localStorage.getItem("users"))
+    : [];
+
+  setTimeout(() => {
+    setUsers(userData);
+  }, 1000);
 
   return (
     <div className={styles.form}>
