@@ -1,0 +1,25 @@
+.logout {
+  position: fixed;
+  right: 0;
+  padding: 20px;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.input {
+  width: 100%;
+  margin: 10px;
+  min-height: 30px;
+}
+
+.add_user_btn {
+  margin: 20px auto;
+  display: block;
+}
